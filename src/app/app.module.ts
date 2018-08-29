@@ -14,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
  var config = {
     apiKey: "AIzaSyDLO5ax7wtW9Y1A5XDZXJWCarmlsQSrPog",
     authDomain: "gymboree-2c78d.firebaseapp.com",
@@ -37,7 +39,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

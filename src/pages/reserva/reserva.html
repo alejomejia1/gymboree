@@ -1,7 +1,6 @@
-
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="third">
     <ion-title text-center>Mis Reservas</ion-title>
   </ion-navbar>
 
@@ -10,4 +9,26 @@
 
 <ion-content padding>
 <button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+
+<ion-card>
+	<ion-card-content>
+		<ion-card-title>Reservas!</ion-card-title>
+		<ion-list>
+			<ion-item>
+				<ion-input placeholder="Nombre Completo" [(ngModel)]="transaction.nombre"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-datetime placeholder="MM/DD/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" [(ngModel)]="transaction.nacimiento"></ion-datetime>
+			</ion-item>
+            <ion-item>
+            	<ion-select [(ngModel)]="transaction.reserva">
+            	  <ion-option [value]="reserva.value" *ngFor="let reserva of reservas">{{ reserva.name }}</ion-option>
+                </ion-select>   
+            </ion-item>
+
+		</ion-list>
+		<button ion-button full (click)="addTransaction()">Añadir Reserva</button>
+	</ion-card-content>
+</ion-card>
+
 </ion-content>
