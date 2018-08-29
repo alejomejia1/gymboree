@@ -21,31 +21,34 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, private afAuth: AngularFireAuth, private statusBar: StatusBar, private splashScreen: SplashScreen) {
-   
+
+    this.afAuth.authState.subscribe(auth => {
+     if(!auth)
+    this.rootPage = LoginPage;
+     else
+    this.rootPage = HomePage;
+
+    });
+
+    
     this.pages = [
       { title: 'Mis Datos', component: HomePage },
       { title: 'Mis Clases', component: ListPage },
       { title: 'Mis Reservas', component: ReservaPage }
     ];
 
-      this.afAuth.authState.subscribe(auth => {
-     if(!auth)
-      this.rootPage = LoginPage;
-    else
-     ths.rootPage = HomePage;
-
-    });
-
-
-
-    
+   
     platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
   
 
-}
+  }
+  openPage(page) {
+    this.nav.setRoot(page.component);
+  }
 
 
 }
