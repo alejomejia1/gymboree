@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ReservaPage } from '../pages/reserva/reserva';
 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { LoginPage } from '../pages/login/login';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,26 +20,32 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
+  constructor(platform: Platform, private afAuth: AngularFireAuth, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+   
     this.pages = [
       { title: 'Mis Datos', component: HomePage },
       { title: 'Mis Clases', component: ListPage },
       { title: 'Mis Reservas', component: ReservaPage }
     ];
 
-  }
+      this.afAuth.authState.subscribe(auth => {
+     if(!auth)
+      this.rootPage = LoginPage;
+    else
+     ths.rootPage = HomePage;
 
-  initializeApp() {
-    this.platform.ready().then(() => {
+    });
+
+
+
+    
+    platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
+  
 
-  openPage(page) {
-    this.nav.setRoot(page.component);
-  }
+}
+
 
 }
