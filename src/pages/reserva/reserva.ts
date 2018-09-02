@@ -24,7 +24,9 @@ export class ReservaPage {
   transaction = {
   nombre: '',
   nacimiento: '',
-  reserva: 0 
+  ciudad: '',
+  celular: '',
+  reserva: 1 
  }
 
  @ViewChild('valueBarsCanvas') valueBarCanvas;
@@ -52,6 +54,8 @@ export class ReservaPage {
      this.transaction = {
         nombre: '',
         nacimiento: '',
+        ciudad: '',
+        celular: '',
         reserva: 0
      };
 

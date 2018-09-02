@@ -18,9 +18,16 @@
 				<ion-input placeholder="Nombre Completo" [(ngModel)]="transaction.nombre"></ion-input>
 			</ion-item>
 			<ion-item>
+				<ion-input placeholder="Ciudad" [(ngModel)]="transaction.ciudad"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input placeholder="Celular" type="tel" [(ngModel)]="transaction.celular"></ion-input>
+			</ion-item>
+			<ion-item>
 				<ion-datetime placeholder="MM/DD/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" [(ngModel)]="transaction.nacimiento"></ion-datetime>
 			</ion-item>
             <ion-item>
+            	<ion-label>Tipo de reserva</ion-label>
             	<ion-select [(ngModel)]="transaction.reserva">
             	  <ion-option [value]="reserva.value" *ngFor="let reserva of reservas">{{ reserva.name }}</ion-option>
                 </ion-select>   

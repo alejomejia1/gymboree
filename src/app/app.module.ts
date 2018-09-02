@@ -15,8 +15,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { Push } from '@ionic-native/push';
 
- var config = {
+
+    var config = {
     apiKey: "AIzaSyDLO5ax7wtW9Y1A5XDZXJWCarmlsQSrPog",
     authDomain: "gymboree-2c78d.firebaseapp.com",
     databaseURL: "https://gymboree-2c78d.firebaseio.com",
@@ -24,7 +26,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     storageBucket: "gymboree-2c78d.appspot.com",
     messagingSenderId: "497690585603"
   };
- 
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   providers: [
     StatusBar,
     SplashScreen,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
