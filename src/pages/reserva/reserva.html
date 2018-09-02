@@ -9,33 +9,117 @@
 
 <ion-content padding>
 <button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
-
+ <form [formGroup]="formularioUsuario" (ngSubmit)="saveData()" novalidate>
 <ion-card>
 	<ion-card-content>
 		<ion-card-title>Reservas!</ion-card-title>
 		<ion-list>
 			<ion-item>
-				<ion-input placeholder="Nombre Completo" [(ngModel)]="transaction.nombre"></ion-input>
+				<ion-icon name="person" item-left></ion-icon>
+                <ion-label stacked>Nombre Completo:</ion-label>
+				<ion-input formControlName="nombre" placeholder="Nombre" [(ngModel)]="transaction.nombre"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="formularioUsuario.get('nombre').errors && formularioUsuario.get('nombre').dirty">
+          <p *ngIf="formularioUsuario.get('nombre').hasError('required')" class="error">
+            El nombre es requerido.
+          </p>
+          <p *ngIf="formularioUsuario.get('nombre').hasError('maxlength')" class="error">
+            El maximo de caracteres permitidos es 30.
+          </p>
 			</ion-item>
 			<ion-item>
-				<ion-input placeholder="Ciudad" [(ngModel)]="transaction.ciudad"></ion-input>
+				<ion-icon name="pin" item-left></ion-icon>
+                <ion-label stacked>Ciudad:</ion-label>
+				<ion-input formControlName="ciudad" placeholder="Ciudad" [(ngModel)]="transaction.ciudad"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="formularioUsuario.get('ciudad').errors && formularioUsuario.get('ciudad').dirty">
+          <p *ngIf="formularioUsuario.get('ciudad').hasError('required')" class="error">
+            La ciudad es requerida.
+          </p>
+			</ion-item>
+
+			<ion-item>
+			    <ion-icon name="ios-locate" item-left></ion-icon>
+                <ion-label stacked>Dirección:</ion-label>
+				<ion-input formControlName="direccion" placeholder="Dirección" [(ngModel)]="transaction.direccion"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="formularioUsuario.get('direccion').errors && formularioUsuario.get('direccion').dirty">
+          <p *ngIf="formularioUsuario.get('direccion').hasError('required')" class="error">
+            La dirección es requerida.
+          </p>
 			</ion-item>
 			<ion-item>
-				<ion-input placeholder="Celular" type="tel" [(ngModel)]="transaction.celular"></ion-input>
+				<ion-icon name="at" item-left></ion-icon>
+				<ion-label stacked>Correo Electronico:</ion-label>
+				<ion-input formControlName="correo" placeholder="E-mail" type="email" [(ngModel)]="transaction.email"></ion-input>
 			</ion-item>
+			  <ion-item *ngIf="formularioUsuario.get('correo').errors && formularioUsuario.get('correo').dirty">
+          <p *ngIf="formularioUsuario.get('correo').hasError('email')" class="error">
+            El correo electronico indicado no es valido.
+          </p>
+        </ion-item>
+
 			<ion-item>
-				<ion-datetime placeholder="MM/DD/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" [(ngModel)]="transaction.nacimiento"></ion-datetime>
+				<ion-icon name="call" item-left></ion-icon>
+				<ion-label stacked>Celular:</ion-label>
+				<ion-input formControlName="celular" placeholder="Celular" type="tel" [(ngModel)]="transaction.celular"></ion-input>
 			</ion-item>
+			  <ion-item *ngIf="formularioUsuario.get('celular').errors && formularioUsuario.get('celular').dirty">
+          <p *ngIf="formularioUsuario.get('celular').hasError('required')" class="error">
+            El celular es requerido.
+          </p>
+          <p *ngIf="formularioUsuario.get('celular').hasError('minlength')" class="error">
+            Introducir un numero valido.
+          </p>
+          <p *ngIf="formularioUsuario.get('celular').hasError('maxlength')" class="error">
+            Introducir un numero valido.
+          </p>
+        </ion-item>
             <ion-item>
-            	<ion-label>Tipo de reserva</ion-label>
-            	<ion-select [(ngModel)]="transaction.reserva">
-            	  <ion-option [value]="reserva.value" *ngFor="let reserva of reservas">{{ reserva.name }}</ion-option>
+            	<ion-icon name="md-contact" item-left></ion-icon>
+              	<ion-label stacked>Nombre del niño:</ion-label>
+              	<ion-input formControlName="nombre_nino" placeholder="Nombre Del Niño" [(ngModel)]="transaction.nombre_nino"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="formularioUsuario.get('nombre_nino').errors && formularioUsuario.get('nombre_nino').dirty">
+          <p *ngIf="formularioUsuario.get('nombre_nino').hasError('required')" class="error">
+            El nombre es requerido.
+          </p>
+          <p *ngIf="formularioUsuario.get('nombre_nino').hasError('maxlength')" class="error">
+            El maximo de caracteres permitidos es 30.
+          </p>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon name="ios-calendar" item-left></ion-icon>
+				<ion-label stacked>Fecha de Nacimiento del niño:</ion-label>
+				<ion-datetime formControlName="nacimiento" placeholder="MM/DD/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" [(ngModel)]="transaction.nacimiento"></ion-datetime>
+			</ion-item>
+				  <ion-item *ngIf="formularioUsuario.get('nacimiento').errors && formularioUsuario.get('nacimiento').dirty">
+                  <p *ngIf="formularioUsuario.get('nacimiento').hasError('required')" class="error">
+                  La fecha de nacimiento es requerida.
+                  </p>
+			      </ion-item>
+	
+            <ion-item>
+            	<ion-label stacked>Tipo de reserva</ion-label>
+            	<ion-select formControlName="reserva" [(ngModel)]="transaction.reserva">
+            	<ion-option [value]="reserva.value" *ngFor="let reserva of reservas">{{ reserva.name }}</ion-option>
                 </ion-select>   
             </ion-item>
+            <ion-item>
+            	<ion-icon name="md-calendar" item-left></ion-icon>
+            	<ion-label stacked>Fecha de la Reserva</ion-label>
+            	<ion-input formControlName="fecha_reserva" placeholder="Fecha Reserva" [(ngModel)]="transaction.fecha_reserva"></ion-input>
+            </ion-item>
+             <ion-item *ngIf="formularioUsuario.get('fecha_reserva').errors && formularioUsuario.get('fecha_reserva').dirty">
+                  <p *ngIf="formularioUsuario.get('fecha_reserva').hasError('required')" class="error">
+                  La fecha de reserva es requerida.
+                  </p>
+			      </ion-item>
 
 		</ion-list>
-		<button ion-button full (click)="addTransaction()">Añadir Reserva</button>
+		<button ion-button full (click)="addTransaction()" [disabled]="!formularioUsuario.valid">Añadir Reserva</button>
 	</ion-card-content>
 </ion-card>
-
+</form>
 </ion-content>
