@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Reserva } from '../../models/reserva';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReservadoPage } from '../reservado/reservado';
 
 
 @IonicPage()
@@ -24,7 +25,7 @@ export class ReservaPage {
   addTransaction() {
    this.afAuth.authState.take(1).subscribe(auth => {
        this.afDatabase.object(`reserva/${auth.uid}`).set(this.reserva)
-         .then(() => this.navCtrl.setRoot('ReservadoPage'));
+         .then(() => this.navCtrl.setRoot(ReservadoPage));
      })
   }
 
@@ -54,9 +55,7 @@ export class ReservaPage {
 
   }
 
-  listoo(){
-  this.navCtrl.push('ReservadoPage');
-  }
+ 
 
 
 }

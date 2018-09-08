@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -5,6 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
 import { HomePage } from '../pages/home/home';
+import { ReservadoPage } from '../pages/reservado/reservado';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +22,8 @@ import { Push } from '@ionic-native/push';
   declarations: [
     MyApp,
    ListPage,
-   HomePage
+   HomePage,
+   ReservadoPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { Push } from '@ionic-native/push';
   entryComponents: [
     MyApp,
     ListPage,
-    HomePage
+    HomePage,
+    ReservadoPage
   ],
   providers: [
     StatusBar,

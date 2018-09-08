@@ -40,4 +40,11 @@ goPage() {
 	this.navCtrl.push('ReservaPage');
 }
 
+ signOut(){
+    this.afAuth.auth.signOut().then(() => {
+      this.navCtrl.setRoot('LoginPage');
+    }
+    );
+    }
+
 }
