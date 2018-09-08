@@ -1,6 +1,6 @@
 export interface Reserva {
 	nombre: string;
-	nombre_nino: string;
+	nombrenino: string;
 	edad: string;
 	ciudad: string;
 	direccion: string;

@@ -97,7 +97,7 @@
             <ion-item>
               <ion-icon name="md-contact" item-left></ion-icon>
                 <ion-label stacked>Nombre del niño:</ion-label>
-                <ion-input formControlName="niño" placeholder="Nombre Del Niño" [(ngModel)]="reserva.nombre_nino"></ion-input>
+                <ion-input formControlName="niño" placeholder="Nombre Del Niño" [(ngModel)]="reserva.nombrenino"></ion-input>
             </ion-item>
              
              <ion-item *ngIf="formularioUsuario.get('niño').errors && formularioUsuario.get('niño').dirty">
@@ -137,7 +137,7 @@
             
 
     </ion-list>
-    <button ion-button full (click)="addTransaction()" [disabled]="!formularioUsuario.valid" (click="reservado()")>Añadir Reserva</button>
+    <button ion-button full (click)="addTransaction()" [disabled]="!formularioUsuario.valid" (click)="listoo()">Añadir Reserva</button>
   </ion-card-content>
 </ion-card>
 </form>

@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
-import { ReservadoPage } from '../pages/reservado/reservado';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,8 +18,7 @@ import { Push } from '@ionic-native/push';
 @NgModule({
   declarations: [
     MyApp,
-    ListPage,
-    ReservadoPage
+   ListPage 
   ],
   imports: [
     BrowserModule,
@@ -32,8 +30,7 @@ import { Push } from '@ionic-native/push';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ListPage,
-    ReservadoPage
+    ListPage
   ],
   providers: [
     StatusBar,

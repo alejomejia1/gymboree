@@ -54,7 +54,7 @@ export class ReservaPage {
 
   }
 
-  reservado(){
+  listoo(){
   this.navCtrl.push('ReservadoPage');
   }
 
