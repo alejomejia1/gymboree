@@ -1,13 +1,21 @@
 <ion-header>
+
   <ion-navbar>
-    <ion-title text-center>Mis Datos</ion-title>
-    <ion-buttons start>
+    <ion-title text-center>Mis datos</ion-title>
+     <ion-buttons start>
      <button ion-button icon-only (click)="signOut()">
         <ion-icon name="ios-exit"></ion-icon></button>
  </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-    <button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+
+	<p>Nombre: {{ (profileData | async)?.nombre}}</p>
+	<p>Nombre Del Niño: {{ (profileData | async)?.nino}}</p>
+	<p>Celular: {{ (profileData | async)?.cell}}</p>
+
 </ion-content>

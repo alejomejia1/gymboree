@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reservado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	
+	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+	
+    <h1>Tipo De Reserva: Clases</h1>
+    <p>Nombre Del Niño: {{ (reservaData | async)?.nombre_nino}}</p>
+    <p>Edad Del Niño: {{ (reservaData | async)?.edad}}</p>
+    <p>Fecha y Hora De Reserva: {{ (reservaData | async)?.fecha_reserva}}</p>
+    
+ <button ion-button icon-only (click)="goPage()">
+		<ion-icon name ="ios-add-circle"></ion-icon>
+	</button>
+    
+
+
+</ion-content>
