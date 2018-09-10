@@ -1,14 +1,19 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Register</ion-title>
+  <ion-navbar color="third">
+    <ion-title>Nueva Cuenta</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-<ion-item>
+<ion-content padding class="bg">
+	<img src="assets/img/logo-gymboree.png">
+	<h1>SignUp</h1>
+	<ion-card>
+		<ion-card-content>
+<ion-list no-lines>
+ <ion-item>
 	<ion-label floating>Email Adress</ion-label>
 	<ion-input type="email" [(ngModel)]="user.email"></ion-input>
 </ion-item>
@@ -22,5 +27,8 @@
 	<ion-input type="password" [(ngModel)]="user.passwordRetyped"></ion-input>
 </ion-item>
 
- <button ion-button (click)="register(user)">Register</button>
+ <button ion-button outline block color="danger"(click)="register(user)">Register</button>
+</ion-list>
+</ion-card-content>
+</ion-card>
 </ion-content>

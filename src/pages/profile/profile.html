@@ -1,35 +1,39 @@
-
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
+  <ion-navbar color="profile2">
+    <ion-title text-center>Perfil</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    
+    <ion-row class="account-form">
+     <ion-col>
+       <ion-list inset>
+	
 	<ion-item>
-		<ion-label floating>Nombre Completo</ion-label>
-		<ion-input [(ngModel)]="profile.nombre"></ion-input>
+		<ion-label><ion-icon name="person"></ion-icon></ion-label>
+		<ion-input [(ngModel)]="profile.nombre" placeholder="Nombre Completo"></ion-input>
 	</ion-item>
     
     <ion-item>
-		<ion-label floating>Celular</ion-label>
-		<ion-input [(ngModel)]="profile.cell"></ion-input>
+		<ion-label><ion-icon name="ios-phone-portrait"></ion-icon></ion-label>
+		<ion-input [(ngModel)]="profile.cell" placeholder="Celular"></ion-input>
 	</ion-item>
 
     <ion-item>
-		<ion-label floating>Dirección</ion-label>
-		<ion-input [(ngModel)]="profile.adress"></ion-input>
+		<ion-label><ion-icon name="ios-locate"></ion-icon></ion-label>
+		<ion-input [(ngModel)]="profile.adress" placeholder="Dirección"></ion-input>
 	</ion-item>
 
 	<ion-item>
-		<ion-label floating>Nombre Del Niño</ion-label>
-		<ion-input [(ngModel)]="profile.nino"></ion-input>
+		<ion-label><ion-icon name="md-person"></ion-icon></ion-label>
+		<ion-input [(ngModel)]="profile.nino" placeholder="Nombre Del Niño"></ion-input>
 	</ion-item>
-
-    <button ion-button clear block (click)="createProfile()">Create Profile</button>
-
+</ion-list>
+    <button ion-button (click)="createProfile()" class="continue-button">Create Profile</button>
+</ion-col>
+</ion-row>
 </ion-content>

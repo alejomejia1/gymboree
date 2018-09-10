@@ -1,23 +1,21 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-<ion-item>
-	<ion-label floating>Email Adress</ion-label>
-	<ion-input type="email" [(ngModel)]="user.email"></ion-input>
-</ion-item>
-
-<ion-item>
-	<ion-label floating>Password</ion-label>
-	<ion-input type="password" [(ngModel)]="user.password"></ion-input>
-</ion-item>
-<button ion-button (click)="login(user)">Login</button>
+<ion-content padding class="bg"> 
+	<img claas="gymboree" src="assets/img/logo-gymboree.png">
+	<h1>Login</h1>
+<ion-card>
+   <img class="gymbo" src="assets/img/gymbo.png">
+<div class="card-subtitle">
+	<ion-list>
+	<ion-item>
+   <ion-label floating>Email Adress</ion-label>
+   <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+  	<ion-item>
+   <ion-label floating>Password</ion-label>
+   <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+</ion-list>
+ </div>
+<button ion-button block color="secondary"(click)="login(user)">Login</button>
 <button ion-button (click)="register()">Register</button>
-
+</ion-card>
 </ion-content>
