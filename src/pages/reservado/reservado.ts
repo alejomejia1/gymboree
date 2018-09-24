@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
-import { Reserva } from './../../models/reserva';
-import { Observable } from 'rxjs/Observable';
-
+import { ReservaPage } from '../reserva/reserva';
+import { LoginPage } from '../login/login';
+import { RestProvider } from '../../providers/rest/rest';
 
 @IonicPage()
 @Component({
@@ -13,38 +12,41 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ReservadoPage {
 
-  reservaData: Observable<any>;
+  reserva: any;
+  servicio: any;
 
-  constructor(private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase, private toast: ToastController, public navCtrl: NavController) {
+  constructor(private auth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController, public restProvider: RestProvider) {
+  this.getReserva();
+  this.getServicio();
   }
  
- ionViewWillLoad() {
-   this.afAuth.authState.subscribe(data => {
-    if (data && data.email && data.uid) {
-      this.toast.create({
-       message: `Welcome to Gymbo-class`,
-       duration: 2000
-      });
-      this.reservaData = this.afDatabase.object(`reserva/${data.uid}`).valueChanges()
-    }
-    else {
-     this.toast.create({
-      message: `Could not find authentication details.`,
-      duration: 2000
-     });
-    }
-   })
- }
 
 goPage() {
-	this.navCtrl.push('ReservaPage');
+	this.navCtrl.push(ReservaPage);
 }
 
- signOut(){
-    this.afAuth.auth.signOut().then(() => {
-      this.navCtrl.setRoot('LoginPage');
-    }
-    );
-    }
+  signOut(){
 
+    this.auth.auth.signOut();
+  }
+
+  getReserva() {
+    this.restProvider.getReserva(1)
+    .then(data => {
+      this.reserva = data.reserva.Reserva;
+      console.log(data);    
+      console.log(this.reserva);
+    
+     })
+  }
+
+  getServicio() {
+    this.restProvider.getServicio(1)
+    .then(data => {
+      this.servicio = data.reserva.Servicio;
+      console.log(data);    
+      console.log(this.servicio);
+    
+     })
+  }
 }

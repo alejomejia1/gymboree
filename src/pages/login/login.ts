@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { User } from '../../models/user';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { HomePage } from '../home/home';
+import { RegisterPage } from '../register/register';
 
 @IonicPage()
 @Component({
@@ -11,24 +10,37 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  user = {} as User;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth) {
-  }
-
- async login(user: User){
- try {
-   const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-   if(result) {
-    this.navCtrl.setRoot(HomePage);
+loginData = {
+  email: '',
+  password: ''
 }
- }
- catch (e) {
- console.error(e);
-  }
+  constructor(
+  public navCtrl: NavController, 
+  public navParams: NavParams,
+  private afAuth: AngularFireAuth,
+  private toastCtrl: ToastController
+  ) { }
+
+  login(){
+ this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, 
+ this.loginData.password)
+    .then(auth => {
+    // Do custom things with auth
+
+  })
+
+   .catch(err => {
+      // Handle error
+      let toast = this.toastCtrl.create({
+        message: err.message,
+        duration: 1000
+      });
+      toast.present();
+    });
   }
   register(){
-  this.navCtrl.push('RegisterPage');
+  this.navCtrl.push(RegisterPage, { email: this.loginData.email
+    });
   }
 
 }

@@ -1,21 +1,101 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title text-center>Mis datos</ion-title>
-     <ion-buttons start>
-     <button ion-button icon-only (click)="signOut()">
-        <ion-icon name="ios-exit"></ion-icon></button>
- </ion-buttons>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+
+    <ion-buttons start>
+     <button class="exit" ion-button icon-only (click)="signOut()">
+        <ion-icon name="ios-exit"></ion-icon></button>
+ </ion-buttons>	
 	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+  <img id="logo" src="assets/img/logo-gymboree.png">
+<h1 text-center>Mis Datos</h1>
 
-	<p>Nombre: {{ (profileData | async)?.nombre}}</p>
-	<p>Nombre Del Niño: {{ (profileData | async)?.nino}}</p>
-	<p>Celular: {{ (profileData | async)?.cell}}</p>
+<h1 text-center> {{ alumno?.nombres }} </h1>
 
+    <ion-row class="account-form">
+     <ion-col>
+       <ion-list inset>
+ 
+  <ion-item class="dato">
+    <ion-icon color="white" name="md-calendar" item-start></ion-icon>
+    Fecha De Nacimiento:
+    <br>
+    <h2>{{ alumno?.fecha_nacimiento}}</h2>
+  </ion-item>
+
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-contacts" item-start></ion-icon>
+    Padre:
+    <br>
+    <h2>{{ alumno?.padre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-contacts" item-start></ion-icon>
+    Madre:
+    <br>
+    <h2>{{ alumno?.madre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-phone-portrait" item-start></ion-icon>
+    Celular Padre:
+    <br>
+    <h2>{{ alumno?.celular_padre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-phone-portrait" item-start></ion-icon>
+    Celular Madre:
+    <br>
+    <h2>{{ alumno?.celular_madre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="md-at" item-start></ion-icon>
+    Email Padre:
+    <br>
+    <h2>{{ alumno?.email_padre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="md-at" item-start></ion-icon>
+    Email Madre:
+    <br>
+    <h2>{{ alumno?.email_madre}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-locate" item-start></ion-icon>
+    Dirección:
+    <br>
+    <h2>{{ alumno?.direccion}}</h2>
+  </ion-item>
+<br>
+  <ion-item class="dato">
+    <ion-icon name="ios-call" item-start></ion-icon>
+    Telefono:
+    <br>
+    <h2>{{ alumno?.telefono}}</h2>
+  </ion-item>
+
+
+
+  
+   
+</ion-list>
+</ion-col>
+</ion-row>
+     
+     <ion-card>
+      <ion-card-header>
+        <ion-item>
+        <ion-icon name="ios-book" item-start></ion-icon>
+        Expectativas:
+      </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        {{ alumno?.expectativas }}
+      </ion-card-content>
+    </ion-card>
+    
 </ion-content>

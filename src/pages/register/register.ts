@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { User } from '../../models/user'; 
 import { AngularFireAuth } from 'angularfire2/auth';
+
+
 
 @IonicPage()
 @Component({
@@ -10,33 +11,48 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class RegisterPage {
  
-  user = {} as User;
+ registerData = {
+    email: '',
+    password: '',
+    passwordRetyped: ''
+ }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private alertCtrl: AlertController,) {
+  constructor(
+  public navCtrl: NavController, 
+  public navParams: NavParams, 
+  private afAuth: AngularFireAuth, 
+  private alertCtrl: AlertController,) {
+ 
+   this.registerData.email = this.navParams.get('email');
   }
  
- async register(user: User) {
- try {
- if(this.user.password !== this.user.passwordRetyped) {
+ register() {
+    if(this.registerData.password !== this.registerData.passwordRetyped) {
       let alert = this.alertCtrl.create({
-        title: 'Error',
+       title: 'Error',
         message: 'Your password and your re-entered password does not match each other.',
-        buttons: ['OK']
+      buttons: ['OK']
       });
       alert.present();
       return;
     }
-  const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-  console.log(result);
 
-   if(result) {
-    this.navCtrl.setRoot('ProfilePage');
-}
-}
+    // Firebase Signup Code
+    this.afAuth.auth.createUserWithEmailAndPassword(this.registerData.email, this.registerData.password)
+    .then(auth => {
+      // Could do something with the Auth-Response
+      console.log(auth);
+    })
 
- catch (e) {
-    console.error(e);
+     .catch(err => {
+      // Handle error
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        message: err.message,
+        buttons: ['OK']
+      });
+      alert.present();
+    });
   }
- }
 
 }

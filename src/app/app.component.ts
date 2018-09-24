@@ -4,9 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { PagosPage } from '../pages/pagos/pagos';
 import { ReservadoPage } from '../pages/reservado/reservado';
-
+import { LoginPage } from '../pages/login/login';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
@@ -17,16 +18,22 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'LoginPage';
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private push: Push) {
+  constructor(platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private push: Push, private afAuth: AngularFireAuth) {
 
-   
+   this.afAuth.authState.subscribe(auth => {
+   if(!auth)
+     this.rootPage = LoginPage;
+   else 
+     this.rootPage = HomePage;   
+  });
+
    this.pages = [
       { title: 'Mis Datos', component: HomePage },
-      { title: 'Mis Clases', component: ListPage },
+      { title: 'Mis Pagos', component: PagosPage },
       { title: 'Mis Reservas', component: ReservadoPage }
     ];
 
