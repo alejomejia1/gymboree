@@ -38,14 +38,23 @@
        <ion-item>
         <ion-icon name="md-clipboard" item-left></ion-icon>
         <ion-label stacked>Servicio</ion-label>
-        <ion-input formControlName="servicio" placeholder="Servicio" ></ion-input>
+        <ion-select  formControlName="servicio" [(ngModel)]="gaming" placeholder="Seleccione un Servicio">
+          <ion-option value="pal">Play And Learn</ion-option>
+          <ion-option value="n64">Nintendo64</ion-option>
+        </ion-select>
+      
       </ion-item>
 
 
        <ion-item>
         <ion-icon name="md-checkbox" item-left></ion-icon>
         <ion-label stacked>Nivel</ion-label>
-        <ion-input formControlName="nivel" placeholder="Nivel" type="number"></ion-input>
+        <ion-select formControlName="nivel" [(ngModel)]="nivel" placeholder="Seleccione un Nivel">
+          <ion-option value="1">Nivel 1</ion-option>
+          <ion-option value="2">Nivel 2</ion-option>
+          <ion-option value="3">Nivel 3</ion-option>
+          <ion-option value="4">Nivel 4</ion-option>
+        </ion-select>
       </ion-item>
 
     </ion-list>
