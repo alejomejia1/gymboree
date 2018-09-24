@@ -1,3 +1,5 @@
+.ios, .md{
+
 page-reservado {
 #niño {
 	width: 50px;
@@ -5,13 +7,34 @@ page-reservado {
 }
 
  h2{
-	font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color:#fff;
+ font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-weight: lighter;
 	}
 
- .account-form {
+.account-form {
     flex: 1;
 }
 
+ ion-item{
+   border-radius: 20px !important;
+  padding-left: 10px !important;
+  background-color: #1A4876;
+  color:#fff;
+ }
 
+ .scroll-content {
+  width:100%;
+	height:100%;
+	background: linear-gradient(10deg,#4e5efc,#4ee7fc);
+
+  flex-direction: column;
+ }
+
+.form{
+	color:white;
+}
+
+}
 
 }
