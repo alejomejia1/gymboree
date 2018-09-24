@@ -13,11 +13,11 @@ import { RestProvider } from '../../providers/rest/rest';
 export class ReservadoPage {
 
   reserva: any;
-  servicio: any;
+  
+  
 
   constructor(private auth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController, public restProvider: RestProvider) {
   this.getReserva();
-  this.getServicio();
   }
  
 
@@ -33,20 +33,13 @@ goPage() {
   getReserva() {
     this.restProvider.getReserva(1)
     .then(data => {
-      this.reserva = data.reserva.Reserva;
+      this.reserva = Object.assign(data.reserva.Reserva, data.reserva.Servicio, data.reserva.Nivel);
       console.log(data);    
       console.log(this.reserva);
     
      })
   }
 
-  getServicio() {
-    this.restProvider.getServicio(1)
-    .then(data => {
-      this.servicio = data.reserva.Servicio;
-      console.log(data);    
-      console.log(this.servicio);
-    
-     })
-  }
+
+
 }

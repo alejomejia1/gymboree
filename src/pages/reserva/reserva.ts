@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReservadoPage } from '../reservado/reservado';
-
 
 @IonicPage()
 @Component({
@@ -37,11 +35,14 @@ export class ReservaPage {
      ciudad:['',[Validators.required,Validators.maxLength(19)]],
      correo:['',[Validators.required,Validators.email]],
      reserva:['',Validators.required],
+     horario:['',Validators.required],
      servicio:['',Validators.required],
-     nivel:['',Validators.required]
+     nivel:['',Validators.required],
    });
 
   }
+
+  
 
  
 

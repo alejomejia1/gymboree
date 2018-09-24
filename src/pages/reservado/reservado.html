@@ -37,8 +37,22 @@
     <ion-icon color="white" name="md-albums" item-start></ion-icon>
     Servicio:
     <br>
-    <h2>{{ servicio?.descripcion}}</h2>
-  </ion-item>
+    <h2>{{ reserva?.descripcion}}</h2>
+ </ion-item>
+  <br>
+  <ion-item class="dato">
+   <ion-icon color="white" name="ios-albums" item-start></ion-icon>
+   Niveles:
+   <br>
+   <h2>{{ reserva?.niveles }}</h2>
+ </ion-item>
+ <br>
+ <ion-item class="dato">
+   <ion-icon color="white" name="ios-albums" item-start></ion-icon>
+   Nivel:
+   <br>
+   <h2>{{ reserva?.nivel }}</h2>
+ </ion-item>
   </ion-list>
 </ion-col>
 </ion-row>

@@ -34,24 +34,5 @@ export class RestProvider {
     });
   }
 
-  getServicio(id: any) {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl3 + id + this.apiKey).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
- 
-   getAlumno(id: any) {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl4 + id + this.apiKey).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
 
 }
