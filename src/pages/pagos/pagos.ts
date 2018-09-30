@@ -11,6 +11,7 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class PagosPage {
 
+ alumno: Array<any>;
 
 
   constructor(
@@ -18,7 +19,17 @@ export class PagosPage {
   public navParams: NavParams,
   public restProvider: RestProvider) { 
 
+ this.getAlumno();
+  }
 
+   getAlumno() {
+    this.restProvider.getAlumno(1)
+    .then(data => {
+      this.alumno = Object.assign(data.Pago);
+      console.log(data);    
+      console.log(this.alumno);
+    
+     })
   }
 
 

@@ -9,5 +9,8 @@
 
 <ion-content padding>
 	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
-   <h1>{{ alumno?.id }}</h1>
+	<h1>Valor</h1>
+	<ion-item *ngFor="let alumno of alumno">
+		{{ alumno?.fecha_vencimiento }}
+	</ion-item>
 </ion-content>
