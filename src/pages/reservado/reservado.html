@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title text-center>Mis Reservas</ion-title>
        <ion-buttons start>
      <button ion-button icon-only (click)="signOut()">
@@ -57,11 +57,9 @@
 </ion-col>
 </ion-row>
 
-<ion-fab right bottom>
- <button ion-fab icon-only (click)="goPage()">
+ <button ion-fab class="add" (click)="goPage()">
 		<ion-icon name ="ios-add-circle"></ion-icon>
-	</button>
-</ion-fab>    
+	</button>  
 
 
 </ion-content>

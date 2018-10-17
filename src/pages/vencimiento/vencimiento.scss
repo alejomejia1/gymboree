@@ -1,0 +1,26 @@
+page-vencimiento {
+	 .side-menu-item {
+  background: none;
+  color:white;
+  font-weight: 400;
+  font-size: 25px;
+  border: 0px;
+  .item-content {
+    background: none;
+    &.activated {
+      background: $SIDEMENU_TRANSPARENCY;
+    }
+    
+  }
+  &.active-page-highlight {
+    .item-content {
+      background: $SIDEMENU_TRANSPARENCY;
+    }
+    
+  }
+}
+
+ion-content{
+	background: linear-gradient(10deg,#4e5efc,#4ee7fc);
+}
+}

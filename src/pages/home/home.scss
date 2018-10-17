@@ -3,10 +3,13 @@
 page-home {
 
 #niño{
-width:50px;
-height:50px;
-margin-top:-5px;
+width:70px;
+height:70px;
+margin-top:-30px;
+}
 
+ion-buttons button {
+  margin-right:30px;
 }
 
 #logo{
@@ -24,9 +27,9 @@ margin-top:-5px;
 
 h1{
    color:#fff;
-   font-size: 2em;
-   font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   font-weight: lighter;
+   font-size: 30px;
+   font-style: italic;
+   font-weight: 500;
    margin-top:20px;
  } 
 h2{
@@ -34,17 +37,11 @@ h2{
 
 }
 
- .dato{
-  border-radius: 20px !important;
-  padding-left: 10px !important;
-  background-color: #ff745b;
- }
-
  ion-card.card{
    border-radius:20px;
    background-color:#51d60d;
  }
- ion-item{
+ ion-card ion-item{
   background-color: #51d60d;
  }
 
@@ -59,6 +56,28 @@ h2{
 
   flex-direction: column;
  }
+ 
+ .side-menu-item {
+  background: none;
+  color: #644603;
+  font-weight: 400;
+  font-size: 17px;
+  border: 0px;
+  .item-content {
+    background: none;
+    &.activated {
+      background: $SIDEMENU_TRANSPARENCY;
+    }
+    
+  }
+  &.active-page-highlight {
+    .item-content {
+      background: $SIDEMENU_TRANSPARENCY;
+    }
+    
+  }
+}
+
 
 }
 }

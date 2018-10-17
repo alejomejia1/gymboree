@@ -1,11 +1,33 @@
 <ion-menu [content]="content">
  
-  <ion-content style="color: #3498db;">
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>  
+  <ion-content padding="false" style="top:0px !important;" class="side-menu-left side-menu-gradient">
+  	<div class="spacer" style="width: 268px; height: 24px;"></div>
+  	<div class="profile-image">
+        <img src="assets/img/profile.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <div class="spacer" style="width: 268px; height: 10px;"></div>
+      <h2 style="color:#FDFDFD;font-weight:300;font-style:italic;text-align:center;">Menú</h2>
+    <div class="spacer" style="width: 268px; height: 26px;"></div>
+
+    <ion-list  no-lines>
+      <ion-item class="side-menu-item" menuClose="" on-click="goToHome()">
+      	<ion-icon color="white" name="md-person" item-start></ion-icon>
+        Mis Datos
+      </ion-item>
+      <ion-item class="side-menu-item" menuClose="" on-click="goToPagos()">
+      	<ion-icon color="white" name="md-calculator" item-start></ion-icon>
+        Mis Pagos
+      </ion-item>
+      <ion-item class="side-menu-item" menuClose="" on-click="goToReservado()">
+      	<ion-icon color="white" name="md-bookmarks" item-start></ion-icon>
+        Mis Reservas
+      </ion-item>
     </ion-list>
+
+    <div class="spacer" style="width: 268px; height: 24px;"></div>
+
+    <button ion-button block (click)="signOut()" menuClose=""><ion-icon color="white" name="md-exit"></ion-icon></button>
+     
   </ion-content>
 
 </ion-menu>

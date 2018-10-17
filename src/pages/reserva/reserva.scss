@@ -1,3 +1,5 @@
+$SIDEMENU_TOP: #ff4b1f;
+$SIDEMENU_BOTTOM: #ff9068;
 page-reserva {
 #niño{
 	width:100px;
@@ -7,5 +9,18 @@ page-reserva {
   white-space: normal;
   color:red
  }
+
+.reserva-gradient{
+	background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+
+ion-card.card{
+   border-radius:20px;
+ }
+
+
 
 }

@@ -1,92 +1,75 @@
 <ion-content padding>
+<div class="spacer" style="width: 300px; height: 25px;"></div>
 
-    <ion-buttons start>
+<ion-buttons>
      <button class="exit" ion-button icon-only (click)="signOut()">
         <ion-icon name="ios-exit"></ion-icon></button>
- </ion-buttons>	
+</ion-buttons>	
 	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
   <img id="logo" src="assets/img/logo-gymboree.png">
 <h1 text-center>Mis Datos</h1>
 
 <h1 text-center> {{ alumno?.nombres }} </h1>
 
-    <ion-row class="account-form">
-     <ion-col>
-       <ion-list inset>
- 
-  <ion-item class="dato">
-    <ion-icon color="white" name="md-calendar" item-start></ion-icon>
-    Fecha De Nacimiento:
-    <br>
-    <h2>{{ alumno?.fecha_nacimiento}}</h2>
-  </ion-item>
+<ion-list  no-lines>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="md-calendar" item-start></ion-icon>
+        Fecha De Nacimiento:
+        <br>
+        {{ alumno?.fecha_nacimiento }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-contacts" item-start></ion-icon>
+       Padre:
+       <br>
+       {{ alumno?.padre }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-contacts" item-start></ion-icon>
+       Madre:
+       <br>
+       {{ alumno?.madre }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-phone-portrait" item-start></ion-icon>
+      Celular Padre:
+      <br>
+      {{ alumno?.celular_padre }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-phone-portrait" item-start></ion-icon>
+      Celular Madre:
+      <br>
+      {{ alumno?.celular_madre }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="md-at" item-start></ion-icon>
+      Email Padre:
+      <br>
+      {{ alumno?.email_padre }}
+    </ion-item> 
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="md-at" item-start></ion-icon>
+      Email Madre:
+      <br>
+      {{ alumno?.email_madre }}
+    </ion-item> 
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-locate" item-start></ion-icon>
+      Dirección:
+      <br>
+      {{ alumno?.direccion }}
+    </ion-item>
+    <ion-item class="side-menu-item">
+      <ion-icon color="white" name="ios-call" item-start></ion-icon>
+      Telefono:
+      <br>
+      {{ alumno?.telefono }}
+    </ion-item>
 
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-contacts" item-start></ion-icon>
-    Padre:
-    <br>
-    <h2>{{ alumno?.padre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-contacts" item-start></ion-icon>
-    Madre:
-    <br>
-    <h2>{{ alumno?.madre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-phone-portrait" item-start></ion-icon>
-    Celular Padre:
-    <br>
-    <h2>{{ alumno?.celular_padre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-phone-portrait" item-start></ion-icon>
-    Celular Madre:
-    <br>
-    <h2>{{ alumno?.celular_madre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="md-at" item-start></ion-icon>
-    Email Padre:
-    <br>
-    <h2>{{ alumno?.email_padre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="md-at" item-start></ion-icon>
-    Email Madre:
-    <br>
-    <h2>{{ alumno?.email_madre}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-locate" item-start></ion-icon>
-    Dirección:
-    <br>
-    <h2>{{ alumno?.direccion}}</h2>
-  </ion-item>
-<br>
-  <ion-item class="dato">
-    <ion-icon name="ios-call" item-start></ion-icon>
-    Telefono:
-    <br>
-    <h2>{{ alumno?.telefono}}</h2>
-  </ion-item>
-
-
-
-  
-   
 </ion-list>
-</ion-col>
-</ion-row>
      
-     <ion-card>
+    <ion-card>
       <ion-card-header>
         <ion-item>
         <ion-icon name="ios-book" item-start></ion-icon>

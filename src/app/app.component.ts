@@ -16,28 +16,19 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) navCtrl: Nav;
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  constructor(platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private push: Push, private auth: AngularFireAuth) {
 
-  constructor(platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private push: Push, private afAuth: AngularFireAuth) {
-
-   this.afAuth.authState.subscribe(auth => {
+   this.auth.authState.subscribe(auth => {
    if(!auth)
      this.rootPage = LoginPage;
    else 
      this.rootPage = HomePage;   
   });
-
-   this.pages = [
-      { title: 'Mis Datos', component: HomePage },
-      { title: 'Mis Pagos', component: PagosPage },
-      { title: 'Mis Reservas', component: ReservadoPage }
-    ];
-
-   
+ 
     platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -45,10 +36,26 @@ export class MyApp {
     });
 
    }
+
+  goToHome(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(HomePage);
+  }goToPagos(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(PagosPage);
+  }goToReservado(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(ReservadoPage);
+  }
   
   openPage(page) {
     this.nav.setRoot(page.component);
   }
+
+  signOut(){
+   this.auth.auth.signOut();
+  }
+
 
   pushSetup(){
   const options: PushOptions = {

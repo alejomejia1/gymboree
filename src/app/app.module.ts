@@ -10,6 +10,10 @@ import { ReservadoPage } from '../pages/reservado/reservado';
 import { RegisterPage } from '../pages/register/register';
 import { ReservaPage } from '../pages/reserva/reserva';
 import { LoginPage } from '../pages/login/login';
+import { FechaPage } from '../pages/fecha/fecha';
+import { VencimientoPage } from '../pages/vencimiento/vencimiento';
+import { ValorPage } from '../pages/valor/valor';
+import { FacturaPage } from '../pages/factura/factura';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,6 +38,10 @@ var config = {
    HomePage,
    PagosPage,
    LoginPage,
+   ValorPage,
+   FacturaPage,
+   VencimientoPage,
+   FechaPage,
    RegisterPage,
    ReservaPage,
    ReservadoPage
@@ -51,6 +59,10 @@ var config = {
     HomePage,
     PagosPage,
     LoginPage,
+    ValorPage,
+    VencimientoPage,
+    FechaPage,
+    FacturaPage,
     RegisterPage,
     ReservaPage,
     ReservadoPage

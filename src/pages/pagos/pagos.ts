@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, ModalController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
-
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import { FacturaPage } from '../factura/factura';
+import { ValorPage } from '../valor/valor';
+import { VencimientoPage } from '../vencimiento/vencimiento';
+import { FechaPage } from '../fecha/fecha';
 
 @IonicPage()
 @Component({
@@ -15,9 +18,10 @@ export class PagosPage {
 
 
   constructor(
-  public navCtrl: NavController,
   public navParams: NavParams,
-  public restProvider: RestProvider) { 
+  public restProvider: RestProvider,
+  private modal: ModalController,
+  private auth: AngularFireAuth) { 
 
  this.getAlumno();
   }
@@ -31,6 +35,32 @@ export class PagosPage {
     
      })
   }
+
+   signOut(){
+
+    this.auth.auth.signOut();
+  }
+
+  openModal(){
+   
+   const myModal = this.modal.create(FacturaPage);
+   myModal.present();
+  }
+  openValor(){
+   const myModal = this.modal.create(ValorPage);
+   myModal.present();
+  }
+  
+  openVencimiento(){
+   const myModal = this.modal.create(VencimientoPage);
+   myModal.present();
+  }
+
+  openFecha(){
+   const myModal = this.modal.create(FechaPage);
+   myModal.present();
+  }
+
 
 
 

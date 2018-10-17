@@ -1,10 +1,13 @@
-<button full ion-button (click)="login()" [disabled]="!loginData.email || !loginData.password">Login</button>
-<ion-content padding class="bg"> 
-	<img claas="gymboree" src="assets/img/logo-gymboree.png">
-	<h1>Login</h1>
-<ion-card>
-   <img class="gymbo" src="assets/img/gymboo.png">
-	<ion-list>
+<ion-content padding style="background: url(assets/img/gymboo.png) no-repeat center;background-size:cover; background-color:#F0AC1D"> 
+	<div class="spacer" style="width: 300px; height: 25px;"></div>
+	 <div>
+      <img src="assets/img/logo-gymboree.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+   </div>
+   <div class="spacer" style="width: 300px; height: 15px;"></div>
+   <h1 style="color:#F8F2F2;font-weight:600;font-style:italic;font-size:70px; text-align:center;">Login</h1>
+   <div class="spacer" style="width: 300px; height: 69px;"></div>
+	<ion-card>
+  <ion-list no-lines>
 	<ion-item>
    <ion-label floating>Email Adress</ion-label>
    <ion-input type="email" [(ngModel)]="loginData.email"></ion-input>
@@ -15,7 +18,8 @@
     </ion-item>
 </ion-list>
  
-<button ion-button block color="secondary"(click)="login()">Login</button>
-<button ion-button (click)="register()">Register</button>
+<button ion-button style="font-weight:500;font-style:italic;color:#F8F2F2;font-size:20px;" block (click)="login()">LOGIN</button>
+<button class="registro" ion-button style="font-weight:600;font-style:italic;color:#62E618;font-size:20px;" block (click)="register()">Register</button>
+
 </ion-card>
 </ion-content>

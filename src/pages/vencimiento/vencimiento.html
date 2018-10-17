@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title text-center>Fecha De Vencimiento</ion-title>
+    <ion-buttons end>
+    	<button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item *ngFor="let alumno of alumno" class="side-menu-item">
+		{{ alumno?.fecha_vencimiento }}
+	</ion-item>	
+</ion-content>
+
