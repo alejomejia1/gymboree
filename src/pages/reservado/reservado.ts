@@ -32,7 +32,7 @@ goPage() {
 
   getReserva() {
     this.restProvider.getReserva(1)
-    .then(data => {
+    .then((data:any) => {
       this.reserva = Object.assign(data.reserva.Reserva, data.reserva.Servicio, data.reserva.Nivel);
       console.log(data);    
       console.log(this.reserva);

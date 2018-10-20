@@ -17,7 +17,17 @@
       <ion-item>
         <ion-icon name="pin" item-left></ion-icon>
                 <ion-label stacked>Ciudad:</ion-label>
-        <ion-input formControlName="ciudad" placeholder="Ciudad"></ion-input>
+        <ion-select formControlName="ciudad" [(ngModel)]="ciudad">
+          <ion-option value="1">Bogota</ion-option>
+          <ion-option value="2">Barranquilla</ion-option>
+          <ion-option value="2">Bucaramanga</ion-option>
+          <ion-option value="2">Cali</ion-option>
+          <ion-option value="2">Chia</ion-option>
+          <ion-option value="2">Ibague</ion-option>
+          <ion-option value="2">Mededellin</ion-option>
+          <ion-option value="2">Valledupar</ion-option>
+        </ion-select>
+        <!-- <ion-input formControlName="ciudad" placeholder="Ciudad"></ion-input> -->
       </ion-item>
   
     

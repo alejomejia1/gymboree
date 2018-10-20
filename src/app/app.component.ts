@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -37,6 +38,9 @@ export class MyApp {
 
    }
 
+
+  
+  
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.setRoot(HomePage);
@@ -49,7 +53,7 @@ export class MyApp {
   }
   
   openPage(page) {
-    this.nav.setRoot(page.component);
+    this.navCtrl.setRoot(page.component);
   }
 
   signOut(){

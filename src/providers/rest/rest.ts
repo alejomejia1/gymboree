@@ -14,7 +14,7 @@ export class RestProvider {
   }
 
 
-  getAlumno(id: any) {
+  getAlumno(id:any) {
     return new Promise(resolve => {
       this.http.get(this.apiUrl + id + this.apiKey).subscribe(data => {
         resolve(data);
@@ -32,15 +32,7 @@ export class RestProvider {
       });
     });
   }
-  getAlumno(id: any) {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl3 + id + this.apiKey).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
+  
 
 
 }

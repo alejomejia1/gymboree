@@ -18,7 +18,7 @@ export class ValorPage {
 
      getAlumno() {
     this.restProvider.getAlumno(1)
-    .then(data => {
+    .then((data:any) => {
       this.alumno = Object.assign(data.Pago);
       console.log(data);    
       console.log(this.alumno);
