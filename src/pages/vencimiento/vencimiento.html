@@ -11,9 +11,10 @@
 
 
 <ion-content padding>
-	<ion-item *ngFor="let alumno of alumno; first as isFirst">
+	
+	<h1 *ngFor="let alumno of alumno; first as isFirst">
 		<span *ngIf="isFirst">{{ alumno?.valor}}</span>
-	</ion-item>
+	</h1>
 
     
 
