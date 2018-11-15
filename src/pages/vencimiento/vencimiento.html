@@ -11,8 +11,11 @@
 
 
 <ion-content padding>
-	<ion-item *ngFor="let alumno of alumno" class="side-menu-item">
-		{{ alumno?.fecha_vencimiento }}
-	</ion-item>	
-</ion-content>
+	<ion-item *ngFor="let alumno of alumno; first as isFirst">
+		<span *ngIf="isFirst">{{ alumno?.valor}}</span>
+	</ion-item>
 
+    
+
+	
+</ion-content>

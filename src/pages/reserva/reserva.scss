@@ -1,5 +1,3 @@
-$SIDEMENU_TOP: #ff4b1f;
-$SIDEMENU_BOTTOM: #ff9068;
 page-reserva {
 #niño{
 	width:100px;
@@ -11,10 +9,7 @@ page-reserva {
  }
 
 .reserva-gradient{
-	background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-	background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-	background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-	background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background:#f5f4f7;
 }
 
 ion-card.card{

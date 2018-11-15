@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="dark">
+  <ion-navbar color="third">
     <ion-title text-center>Mis Reservas</ion-title>
        <ion-buttons start>
      <button ion-button icon-only (click)="signOut()">
@@ -14,7 +14,7 @@
 
 <ion-content padding>
 	
-	<button ion-button menuToggle id="niño"><img src="assets/img/niño.png"></button>
+	<button ion-button menuToggle id="niño" color="third"><img src="assets/img/niño.png"></button>
 	
     <ion-row class="account-form">
      <ion-col>
@@ -57,9 +57,28 @@
 </ion-col>
 </ion-row>
 
+<ion-grid>
+  <ion-row>
+    <ion-col col-auto>
+      <p>niveles</p>
+    </ion-col>
+    <ion-col col-auto>
+      <p>hora</p>
+    </ion-col>
+    <ion-col col-auto>
+      <p>nivel</p>
+    </ion-col>
+    <ion-col col-auto>
+      <p>fecha de reserva</p>
+    </ion-col>
+    <ion-col col-auto>
+      <p>servicio</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
  <button ion-fab class="add" (click)="goPage()">
 		<ion-icon name ="ios-add-circle"></ion-icon>
 	</button>  
-
 
 </ion-content>
