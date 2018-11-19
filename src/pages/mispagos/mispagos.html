@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Mis Pagos</ion-title>
+    <ion-buttons end>
+     <button ion-button icon-only (click)="switchStyle()">
+     	<ion-icon name="bulb"></ion-icon>
+     </button>
+     <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+<ngx-datatable class="fullscreen" [ngClass]="tablestyle" [rows]="alumno" [columnMode]="'force'" [sortType]="'multi'" [reorderable]="false">
+<ngx-datatable-column prop="nfactura" [resizeable]="false">
+  <ng-template let-column="column"
+   ngx-datatable-header-template let-sort="sortFn">
+   <span (click)="sort()">FACTURA</span>
+  </ng-template>
+  <ng-template let-value="value" ngx-datatable-cell-template>
+   {{value}}
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column prop="valor" [resizeable]="false">
+ <ng-template let-column="column" 
+  ngx-datatable-header-template let-sort="sortFn">
+  <span (click)="sort()">VALOR</span>
+ </ng-template>
+ <ng-template let-value="value" ngx-datatable-cell-template>
+  {{value}}
+ </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column prop="fecha_pago" [resizeable]="false">
+ <ng-template let-column="column" 
+  ngx-datatable-header-template let-sort="sortFn">
+  <span (click)="sort()">FECHA PAGO</span>
+ </ng-template>
+ <ng-template let-value="value" ngx-datatable-cell-template>
+  {{value}}
+ </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column prop="fecha_vencimiento" [resizeable]="false">
+   <ng-template let-column="column" 
+    ngx-datatable-header-template let-sort="sortFn">
+    <span (click)="sort()">FECHA VENCIMIENTO</span>
+   </ng-template>
+   <ng-template let-value="value" ngx-datatable-cell-template>
+    {{value}}
+   </ng-template>
+</ngx-datatable-column> 	
+
+</ngx-datatable>
+</ion-card>
+</ion-content>

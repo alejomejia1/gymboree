@@ -11,13 +11,13 @@
 <form [formGroup]="formularioUsuario" (ngSubmit)="saveData()" novalidate>
 <ion-card>
   <ion-card-content>
-    <ion-card-title>Reservas!</ion-card-title>
+    <ion-card-title text-center>Reservas!</ion-card-title>
     <ion-list>
       
       <ion-item>
         <ion-icon name="pin" item-left></ion-icon>
-                <ion-label stacked>Ciudad:</ion-label>
-        <ion-select formControlName="ciudad" [(ngModel)]="ciudad">
+        <ion-label stacked>Ciudad:</ion-label>
+        <ion-select formControlName="ciudad" [(ngModel)]="ciudad" placeholder="Seleccione una Ciudad">
           <ion-option value="1">Bogota</ion-option>
           <ion-option value="2">Barranquilla</ion-option>
           <ion-option value="2">Bucaramanga</ion-option>
@@ -41,7 +41,7 @@
       <ion-item>
         <ion-icon name="md-calendar" item-left></ion-icon>
         <ion-label stacked>Fecha de la Reserva</ion-label>
-        <ion-input formControlName="reserva" placeholder="Fecha Reserva" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-input>
+        <ion-datetime formControlName="reserva" placeholder="Fecha De Reserva" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
 
       <ion-item>
@@ -78,7 +78,7 @@
       </ion-item>
 
     </ion-list>
-
+    
     <button ion-button full  [disabled]="!formularioUsuario.valid">Añadir Reserva</button>
   </ion-card-content>
   </ion-card>

@@ -2,9 +2,9 @@
 
   <ion-navbar color="third">
     <ion-title text-center>Pagos</ion-title>
-    <ion-buttons start>
+    <ion-buttons end>
      <button ion-button icon-only (click)="signOut()">
-        <ion-icon name="ios-exit"></ion-icon></button>
+        <ion-icon name="md-exit"></ion-icon></button>
  </ion-buttons>
   </ion-navbar>
 
@@ -13,15 +13,12 @@
 
 <ion-content padding>
 	<div class="spacer" style="width: 268px; height: 25px;"></div>
-	<img src="assets/img/logo-gymboree.png">
+	<img id="logo" src="assets/img/logo-gymboree.png">
 	<div class="spacer" style="width: 268px; height: 15px;"></div>
 	<button class="boton1" ion-button menuToggle id="niño" color="third"><img src="assets/img/niño.png"></button>
 	<div class="spacer" style="width: 268px; height: 5px;"></div>
 	<h1 text-center>Pagos Realizados</h1>
-	<button ion-button block large (click)="openModal()"># De Factura</button>
-	<button ion-button block large (click)="openValor()">Valor</button>
-	<button ion-button block large (click)="openFecha()">Fecha De Pago</button>
-	<button ion-button block large (click)="openVencimiento()">Fecha De Vencimiento</button>
+	<button ion-button block large (click)="openMispagos()">Pagos Realizados</button>
 
 
 </ion-content>

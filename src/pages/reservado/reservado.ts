@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ReservaPage } from '../reserva/reserva';
 import { LoginPage } from '../login/login';
@@ -16,7 +16,7 @@ export class ReservadoPage {
   
   
 
-  constructor(private auth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController, public restProvider: RestProvider) {
+  constructor(private auth: AngularFireAuth, public navCtrl: NavController, public restProvider: RestProvider) {
   this.getReserva();
   }
  

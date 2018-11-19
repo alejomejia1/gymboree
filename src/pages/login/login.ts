@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RegisterPage } from '../register/register';
 
@@ -16,7 +16,6 @@ loginData = {
 }
   constructor(
   public navCtrl: NavController, 
-  public navParams: NavParams,
   private afAuth: AngularFireAuth,
   private toastCtrl: ToastController
   ) { }

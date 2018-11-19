@@ -10,10 +10,7 @@ import { ReservadoPage } from '../pages/reservado/reservado';
 import { RegisterPage } from '../pages/register/register';
 import { ReservaPage } from '../pages/reserva/reserva';
 import { LoginPage } from '../pages/login/login';
-import { FechaPage } from '../pages/fecha/fecha';
-import { VencimientoPage } from '../pages/vencimiento/vencimiento';
-import { ValorPage } from '../pages/valor/valor';
-import { FacturaPage } from '../pages/factura/factura';
+import { MispagosPage } from '../pages/mispagos/mispagos';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +19,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Push } from '@ionic-native/push';
 import { RestProvider } from '../providers/rest/rest';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 var config = {
     apiKey: "AIzaSyDLO5ax7wtW9Y1A5XDZXJWCarmlsQSrPog",
@@ -38,10 +37,7 @@ var config = {
    HomePage,
    PagosPage,
    LoginPage,
-   ValorPage,
-   FacturaPage,
-   VencimientoPage,
-   FechaPage,
+   MispagosPage,
    RegisterPage,
    ReservaPage,
    ReservadoPage
@@ -52,6 +48,7 @@ var config = {
     HttpClientModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
+    NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,10 +56,7 @@ var config = {
     HomePage,
     PagosPage,
     LoginPage,
-    ValorPage,
-    VencimientoPage,
-    FechaPage,
-    FacturaPage,
+    MispagosPage,
     RegisterPage,
     ReservaPage,
     ReservadoPage
@@ -72,7 +66,8 @@ var config = {
     SplashScreen,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    ScreenOrientation
   ]
 })
 export class AppModule {}
