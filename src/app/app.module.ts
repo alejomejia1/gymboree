@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ReservaPage } from '../pages/reserva/reserva';
 import { LoginPage } from '../pages/login/login';
 import { MispagosPage } from '../pages/mispagos/mispagos';
+import { MisreservasPage } from '../pages/misreservas/misreservas';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -38,6 +39,7 @@ var config = {
    PagosPage,
    LoginPage,
    MispagosPage,
+   MisreservasPage,
    RegisterPage,
    ReservaPage,
    ReservadoPage
@@ -57,6 +59,7 @@ var config = {
     PagosPage,
     LoginPage,
     MispagosPage,
+    MisreservasPage,
     RegisterPage,
     ReservaPage,
     ReservadoPage

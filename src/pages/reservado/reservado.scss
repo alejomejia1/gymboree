@@ -4,6 +4,7 @@ page-reservado {
 #niño {
 	width: 70px;
 	height: 70px;
+  margin-top:-70px;
 }
 
  h2{
@@ -16,6 +17,12 @@ page-reservado {
     flex: 1;
 }
 
+#logo{
+  width:200px;
+  height:50px;
+  margin-left:100px;
+}
+
  ion-item{
    border-radius: 20px !important;
   padding-left: 10px !important;
@@ -26,7 +33,7 @@ page-reservado {
  .scroll-content {
   width:100%;
 	height:100%;
-	background: linear-gradient(10deg,#4e5efc,#4ee7fc);
+	background:#f5f4f7;
 
   flex-direction: column;
  }
@@ -37,6 +44,23 @@ page-reservado {
 
 .add{
  background-color:#EC2D13; 
+}
+
+h1{
+  color:#000;
+   font-size: 30px;
+   font-style: italic;
+   font-weight: 500;
+   margin-top:20px;
+}
+
+@media screen and (min-width: 320px) and (max-width:568px){
+  #logo{
+  margin-left:100px;
+  margin-bottom:-7px;
+  width:155px;
+  height:45px;
+  }
 }
 
 }

@@ -11,52 +11,15 @@
 
 </ion-header>
 
-
 <ion-content padding>
-	
-	<button ion-button menuToggle id="niño" color="third"><img src="assets/img/niño.png"></button>
-	
-    <ion-row class="account-form">
-     <ion-col>
-       <ion-list inset>
-  <ion-item >
-    <ion-icon color="white" name="md-calendar" class="form" item-start></ion-icon>
-    Fecha De Reserva:
-    <br>
-    <h2>{{ reserva?.fecha}}</h2>
-  </ion-item>
-  <br>
-  <ion-item class="dato">
-    <ion-icon color="white" name="ios-clock" item-start></ion-icon>
-    Hora:
-    <br>
-    <h2>{{ reserva?.hora}}</h2>
-  </ion-item>
-  <br>
- <ion-item class="dato">
-    <ion-icon color="white" name="md-albums" item-start></ion-icon>
-    Servicio:
-    <br>
-    <h2>{{ reserva?.descripcion}}</h2>
- </ion-item>
-  <br>
-  <ion-item class="dato">
-   <ion-icon color="white" name="ios-albums" item-start></ion-icon>
-   Niveles:
-   <br>
-   <h2>{{ reserva?.niveles }}</h2>
- </ion-item>
- <br>
- <ion-item class="dato">
-   <ion-icon color="white" name="ios-albums" item-start></ion-icon>
-   Nivel:
-   <br>
-   <h2>{{ reserva?.nivel }}</h2>
- </ion-item>
-  </ion-list>
-</ion-col>
-</ion-row>
-
+	<div class="spacer" style="width: 268px; height: 25px;"></div>
+  <img id="logo" src="assets/img/logo-gymboree.png">
+  <div class="spacer" style="width: 268px; height: 15px;"></div>
+	<button ion-button menuToggle id="niño" color="third"><img src="assets/img/niño.png"></button> 
+  <div class="spacer" style="width: 268px; height: 5px;"></div>
+  <h1 text-center>Mis Reservas</h1>
+   <button ion-button block large (click)="openMisreservas()">Reservas</button>
+<div class="spacer" style="width: 268px; height: 15px;"></div>
  <button ion-fab class="add" (click)="goPage()">
 		<ion-icon name ="ios-add-circle"></ion-icon>
 	</button>  
